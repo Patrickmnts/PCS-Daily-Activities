@@ -1,0 +1,30 @@
+.span4 {
+  background-color: lightgray;
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.btn-large {
+  width: 260px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.blue {
+  background-color: blue;
+}
+
+#congratulations{
+  text-align: center;
+  background-color: purple;
+  color: white;
+  border-radius: 10px;
+  width: 260px;
+  margin-top: 5px;
+}
+
+.hidden {
+  display: none;
+}
