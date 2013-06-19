@@ -28,24 +28,48 @@ $(document).ready(function(){
     //Find neighbors
     neighbors_value = neighbors($this);
 
+    // if (neighbors_value.up.length === 0){
+    //   // Is there already a row?
+    //   new_up = $('<div class="row"><div class="span1"></div></div>');
+    //   $('.span1', new_up).attr('data-row', parseInt($this.data('row'), 10) - 1);
+    //   $('.span1', new_up).attr('data-column', parseInt($this.data('column'), 10));
+    //   $('.container').prepend(new_up);
+    // }
+    // if (neighbors_value.down.length === 0){
+    //   new_down = $('<div class="row"><div class="span1"></div></div>');
+    //   $('.span1', new_down).attr('data-row', parseInt($this.data('row'), 10) + 1);
+    //   $('.span1', new_down).attr('data-column', parseInt($this.data('column'), 10));
+    //   $('.container').append(new_down);
+    // }
+    // if (neighbors_value.right.length === 0){
+    //   new_right = square.clone();
+    //   new_right.attr('data-row', parseInt($this.data('row'), 10));
+    //   new_right.attr('data-column', parseInt($this.data('column'), 10) + 1);
+    //   $this.parent().append(new_right);
+    // }
+    // if (neighbors_value.right.length === 0){
+    //   new_left = square.clone();
+    //   new_left.attr('data-row', parseInt($this.data('row'), 10));
+    //   new_left.attr('data-column', parseInt($this.data('column'), 10) - 1);
+    //   $this.parent().append(new_left);
+    // }
 
     //Add a new row if necessary
     if (neighbors_value.up.length === 0){
-      new_up = $('<div class="row"><div class="span1"></div></div');
-      // debugger
-      $('.span1', new_up).attr('data-row', parseInt($this.data('row'), 10) - 1);
-      $('.span1', new_up).attr('data-column', parseInt($this.data('column'), 10));
-      $('.container').prepend(new_up);
+      new_row = $this.parent().clone();
+      $('.span1', new_row).attr('data-row', parseInt($this.data('row'), 10) - 1);
+      $('.span1', new_row).attr('data-column', parseInt($this.data('column'), 10));
+      $('.container').prepend(new_row);
     }
     if (neighbors_value.down.length === 0){
-      new_down = $('<div class="row"><div class="span1"></div></div');
-      // debugger
-      $('.span1', new_down).attr('data-row', parseInt($this.data('row'), 10) + 1);
-      $('.span1', new_down).attr('data-column', parseInt($this.data('column'), 10));
-      $('.container').append(new_down);
+      new_row = $this.parent().clone();
+      $('.span1', new_row).attr('data-row', parseInt($this.data('row'), 10) + 1);
+      $('.span1', new_row).attr('data-column', parseInt($this.data('column'), 10));
+      $('.container').append(new_row);
     }
 
     //Add new columns if necessary.
+
 
 
     //Reevaluate neighbors & Color Change
