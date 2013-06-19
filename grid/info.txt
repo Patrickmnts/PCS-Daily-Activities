@@ -1,10 +1,11 @@
 1. Create an html page with a 3x3 grid with divs that are 80x80 pixels with 10 pix of padding all around. give them all background color of light gray.
+
 underneath the grid add a link with the worde "Wipe" in it.
 
 2.  when you click on a box, change the background color of the box to blue. clicking again reverts the color to gray.
 When you click the whipe link, all the boxes should revert back to gray.
 
-If all boxes are green show a hidden div that says congratulations!
+If all boxes are blue show a hidden div that says congratulations!
 
 3.  when you click a box, toggle the background color fo that box and those boxes directly connected to it.
 

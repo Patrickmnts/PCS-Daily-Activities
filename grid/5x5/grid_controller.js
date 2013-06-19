@@ -87,10 +87,9 @@ $(document).ready(function(){
 // LOGIC
   $('.span4').on('click', function(){
     $(this).toggleClass('blue');
-
-  if ($('.span4').not('.blue').length === 0){
-    $('#congratulations').removeClass('hidden');
-   }
+      if ($('.span4').not('.blue').length === 0){
+        $('#congratulations').removeClass('hidden');
+        }
   });
 
   $('.btn-large').on('click', function(){
