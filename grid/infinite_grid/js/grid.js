@@ -57,19 +57,40 @@ $(document).ready(function(){
     //Add a new row if necessary
     if (neighbors_value.up.length === 0){
       new_row = $this.parent().clone();
+      $('.span1', new_row).removeClass('red blue');
       $('.span1', new_row).attr('data-row', parseInt($this.data('row'), 10) - 1);
       $('.span1', new_row).attr('data-column', parseInt($this.data('column'), 10));
       $('.container').prepend(new_row);
     }
     if (neighbors_value.down.length === 0){
       new_row = $this.parent().clone();
+      $('.span1', new_row).removeClass('red blue');
       $('.span1', new_row).attr('data-row', parseInt($this.data('row'), 10) + 1);
       $('.span1', new_row).attr('data-column', parseInt($this.data('column'), 10));
       $('.container').append(new_row);
     }
 
     //Add new columns if necessary.
-
+    if (neighbors_value.left.length === 0){
+      $('.row').each(function (index, row) {
+        var current_column = $('.span1', this).first().data('column');
+        var current_row = $('.span1', this).first().data('row');
+        new_left = square.clone();
+        new_left.attr('data-row', parseInt(current_row, 10));
+        new_left.attr('data-column', parseInt(current_column, 10) - 1);
+        $(row).prepend(new_left);
+      });
+    }
+    if (neighbors_value.right.length === 0){
+      $('.row').each(function (index, row) {
+        var current_column = $('.span1', this).last().data('column');
+        var current_row = $('.span1', this).last().data('row');
+        new_right = square.clone();
+        new_right.attr('data-row', parseInt(current_row, 10));
+        new_right.attr('data-column', parseInt(current_column, 10) + 1);
+        $(row).append(new_right);
+      });
+    }
 
 
     //Reevaluate neighbors & Color Change
@@ -86,6 +107,4 @@ $(document).ready(function(){
       turn_holder = 'blue';
     }
   });
-
-
 });
